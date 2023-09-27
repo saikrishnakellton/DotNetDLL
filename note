@@ -1,0 +1,9 @@
+Install Mono:
+
+Since the code uses .NET libraries (CLR), you'll need to use Mono, an open-source implementation of the .NET Framework for Linux, to run .NET-based DLLs on Linux. Install Mono on your Linux system if it's not already installed:
+
+
+# https://www.youtube.com/watch?v=lnsTJRY1jPU&ab_channel=SMKTECH
+# https://www.thecoderworld.com/install-ubuntu-on-virtualbox/
+
+sudo apt-get install mono-complete
