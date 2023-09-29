@@ -3,11 +3,12 @@
 import clr
 import os
 
-clr.AddReference(os.getcwd()+"\dlls\CalcProject.dll")
-# dll_path = os.path.join(os.getcwd(), "dlls", "CalcProject.dll").replace("\\", "/")
-# clr.AddReference(dll_path)
+# clr.AddReference(os.getcwd()+"\dlls\CalcProject.dll")
+dll_path = os.path.join(os.getcwd(), "dlls", "CalcProject.dll").replace("\\", "/")
+clr.AddReference(dll_path)
 from CalcProject import calculate
 
 
 obj = calculate()
-print(obj.Add(1,2))
+print(f"Addition of 1, 2 is {obj.Add(1,2)}")
+print(f"Substraction of 5, 2 is {obj.Add(5,2)}")
