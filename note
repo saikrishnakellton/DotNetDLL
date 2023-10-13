@@ -7,3 +7,7 @@ Since the code uses .NET libraries (CLR), you'll need to use Mono, an open-sourc
 # https://www.thecoderworld.com/install-ubuntu-on-virtualbox/
 
 sudo apt-get install mono-complete
+
+
+<!-- 
+The code you provided is written in C#. C# (pronounced "C sharp") is a programming language developed by Microsoft. It is a versatile language commonly used for developing Windows applications, web applications, and various types of software on the .NET framework. The code defines a namespace CalcProject containing a class named calculate with two methods, Add and Sub, which perform addition and subtraction operations on integers, respectively. -->
