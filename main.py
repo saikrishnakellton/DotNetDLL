@@ -5,7 +5,9 @@ import os
 import argparse
 
 # clr.AddReference(os.getcwd()+"\dlls\CalcProject.dll")
-dll_path = os.path.join(os.getcwd(), "dlls", "CalcProject.dll").replace("\\", "/")
+# dll_path = os.path.join(os.getcwd(), "dlls", "CalcProject.dll").replace("\\", "/")
+dll_path = os.path.join('D:\projects\DotNetDLL', "dlls", "CMSPVT.dll").replace("\\", "/")
+
 clr.AddReference(dll_path)
 from CalcProject import calculate
 
