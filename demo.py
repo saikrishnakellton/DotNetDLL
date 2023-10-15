@@ -9,23 +9,10 @@ print(platform.architecture())
 import ctypes
 from ctypes import*
 # Load DLL into memory.
-mydll = cdll.LoadLibrary(os.getcwd()+"\dlls\CMSPVT.dll")
 import pdb;pdb.set_trace()
+your_dll = ctypes.windll.LoadLibrary('CMSPVT.dll')
 
-hllDll = ctypes.WinDLL(os.getcwd()+"\dlls\CMSPVT.dll")
-hllApiProto = ctypes.WINFUNCTYPE (
-    ctypes.c_int,      # Return type.
-    ctypes.c_void_p,   # Parameters 1 ...
-    ctypes.c_void_p,
-    ctypes.c_void_p,
-    ctypes.c_void_p)   # ... thru 4.
-hllApiParams = (1, "p1", 0), (1, "p2", 0), (1, "p3",0), (1, "p4",0),
-hllApi = hllApiProto (("clsPVTGas", hllDll), hllApiParams)
-p1 = ctypes.c_int (1)
-p2 = ctypes.c_char_p (sessionVar)
-p3 = ctypes.c_int (1)
-p4 = ctypes.c_int (0)
-hllApi (ctypes.byref (p1), p2, ctypes.byref (p3), ctypes.byref (p4))
+
 # # clr.AddReference(os.getcwd()+"\dlls\CMSPVT.dll")
 # dll_path = os.path.join(os.getcwd(), "clientdll", "CMSPVT.dll").replace("\\", "/")
 # clr.AddReference(dll_path)
