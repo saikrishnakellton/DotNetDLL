@@ -44,7 +44,7 @@ def index():
         # Populate choices for Dropdown 1
         # data_form.dropdown1.choices = 
         dropdown_data = ['Select']
-        dropdown_data.extend([choice for choice in dropdown1_choices if not choice.startswith("_")])
+        dropdown_data.extend([choice for choice in dropdown1_choices if choice.startswith("cls")])
         return jsonify({'success': 'File uploaded successfully', 'dropdown1_data': dropdown_data, 'file_path':file_path})
     return render_template('index.html', upload_form=upload_form, data_form=data_form)
 
@@ -54,27 +54,29 @@ def get_dropdown2_options():
     dropdown1_value = request.args.get('dropdown1_value', '')
     
     clr.AddReference(request.args['file_path'] )
-    
+    dropdown_data = ['Select']
     
     if dropdown1_value == 'Select':
-        raise 'Please select a value'
+        raise
     else:
-        import pdb;pdb.set_trace()
-        data  = getattr(clr, dropdown1_value)('1')
+        dropdown1_choices = list(set(dir(getattr(clr, dropdown1_value))))
+        
+        dropdown_data.extend([choice for choice in dropdown1_choices if not choice.startswith("_")])
 
     # Return JSON response with dropdown2_options
-    return jsonify({'data': ''})
+    return jsonify({'options': dropdown_data})
 
 @app.route('/api/submit_form', methods=['POST'])
 def submit_form():
     try:
         data = request.get_json()
-
-        # Simulate processing the form data
+        clr.AddReference(data['file_path'] )
+        
+        obj = getattr(clr, data['dropdown1'])()
+        output = getattr(obj, data['dropdown2'])(*[float(i) for i in data['inputOptions'].split(',')])
         result = {
-            'dropdown1': data.get('dropdown1', ''),
-            'dropdown2': data.get('dropdown2', ''),
-            'message': 'Form submitted successfully!'
+            'output': output,
+            'message': 'Fetched data successfully!'
         }
 
         return jsonify(result)
