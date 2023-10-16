@@ -12,7 +12,7 @@ WORKDIR /app
 COPY . /app
 
 # Install the Mono runtime
-RUN apt-get update && apt-get install -y mono-complete
+# RUN apt-get update && apt-get install -y mono-complete
 # RUN apt-get install mono-vbnc
 
 
