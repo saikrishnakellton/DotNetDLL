@@ -40,6 +40,11 @@
                 <label for="dropdown2">Dropdown 2:</label>
                 <select id="dropdown2" name="dropdown2" class="form-control"></select>
             </div>
+            <div class="form-group">
+                <label for="dropdown3">Input:</label>
+                <input id="dropdown3" name="dropdown3" class="form-control" value="" />
+            </div>
+            
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
@@ -115,7 +120,8 @@
             var formData = {
                 dropdown1: $("#dropdown1").val(),
                 dropdown2: $("#dropdown2").val(),
-                file_path:  $('#hidden-url').val( response.file_path )
+                inputOptions: $("#dropdown3").val(),
+                file_path:  $('#hidden-url').val()
             };
 
             // Make an AJAX request to the API to get JSON data based on dropdown values
