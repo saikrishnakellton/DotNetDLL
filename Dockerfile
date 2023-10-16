@@ -23,7 +23,7 @@ RUN apt-get update && \
 RUN python3 -m venv env
 ENV PATH="/app/env/bin:$PATH"
 
-RUN source env/bin/activate
+# RUN source env/bin/activate
 
 RUN  pip install pythonnet
 # Install any needed packages specified in requirements.txt
