@@ -13,7 +13,7 @@ COPY . /app
 
 # Install the Mono runtime
 RUN apt-get update && apt-get install -y mono-complete
-RUN apt-get install mono-vbnc
+# RUN apt-get install mono-vbnc
 
 
 # Install any needed packages specified in requirements.txt
