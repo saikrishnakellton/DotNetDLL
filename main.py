@@ -5,28 +5,28 @@ import os
 import argparse
 
 # clr.AddReference(os.getcwd()+"\dlls\CalcProject.dll")
-dll_path = os.path.join(os.getcwd(), "dlls", "CMSPVT.dll").replace("\\", "/")
+dll_path = os.path.join(os.getcwd(), "dlls", "CalcProject.dll").replace("\\", "/")
 # dll_path = os.path.join('D:\projects\DotNetDLL', "dlls", "CMSPVT.dll").replace("\\", "/")
 
 clr.AddReference(dll_path)
 
-obj = clr.clsPVTGas()
-import ipdb;ipdb.set_trace()
-print(obj.FctZ_Stand(1.0,2.0,4.0))
-print(obj.FctZ_BB(0.1,0.3,0.3,0.5))
+# obj = clr.clsPVTGas()
+# import ipdb;ipdb.set_trace()
+# print(obj.FctZ_Stand(1.0,2.0,4.0))
+# print(obj.FctZ_BB(0.1,0.3,0.3,0.5))
 
-print(obj.FctBg(1,2,3))
-print(obj.FctMwtC(1))
-print(obj.FctMwtG(1))
-print(obj.FctPpc(0.111))
-print(obj.FctZ_Stand(1.0,2.0,4.0))
+# print(obj.FctBg(1,2,3))
+# print(obj.FctMwtC(1))
+# print(obj.FctMwtG(1))
+# print(obj.FctPpc(0.111))
+# print(obj.FctZ_Stand(1.0,2.0,4.0))
 
 
 from CalcProject import calculate
 
-# obj = calculate()
-# print(f"Addition of 1, 2 is {obj.Add(1,2)}")
-# print(f"Substraction of 5, 2 is {obj.Add(5,2)}")
+obj = calculate()
+print(f"Addition of 1, 2 is {obj.Add(1,2)}")
+print(f"Substraction of 5, 2 is {obj.Sub(5,2)}")
 
 
 # def main():

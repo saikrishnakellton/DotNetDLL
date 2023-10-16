@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/566.cb91f700.chunk.css","mappings":"AAAA,aAME,aACF","sources":["views/DailyDocumentUpload/ViewFile.css"],"sourcesContent":["#htmlContent {\r\n  /* position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%; */\r\n  overflow: auto; /* Enable scrolling if content overflows the container */\r\n}"],"names":[],"sourceRoot":""}
