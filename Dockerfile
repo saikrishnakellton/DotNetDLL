@@ -16,6 +16,11 @@ RUN apt-get update && apt-get install -y mono-complete
 # RUN apt-get install mono-vbnc
 
 
+RUN python3 -m venv env
+
+RUN source env/bin/activate
+
+RUN  pip install pythonnet
 # Install any needed packages specified in requirements.txt
 # RUN pip install --trusted-host pypi.python.org -r requirements.txt
 RUN pip3 install -r requirements.txt
