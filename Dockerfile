@@ -16,6 +16,10 @@ COPY . /app
 # RUN apt-get install mono-vbnc
 
 
+RUN apt-get update && \
+    apt-get install -y python3-venv
+
+# Recreate the virtual environment
 RUN python3 -m venv env
 
 RUN source env/bin/activate
