@@ -21,6 +21,7 @@ RUN apt-get update && \
 
 # Recreate the virtual environment
 RUN python3 -m venv env
+ENV PATH="/app/env/bin:$PATH"
 
 RUN source env/bin/activate
 
